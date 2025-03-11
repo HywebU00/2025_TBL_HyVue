@@ -1,0 +1,164 @@
+.mpLoginPage {
+  background: url('@/assets/images/mp_bg_main.png') center center;
+  background-size: cover;
+  @include screen('tablet') {
+    height: 100% !important;
+    min-height: 100vh;
+  }
+  > div {
+    max-width: 1240px;
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: flex-start;
+      max-width: rem(360);
+      @include screen('desktop') {
+        margin-left: 1rem;
+      }
+      + .v-sheet {
+        height: 100%;
+      }
+    }
+    .title {
+      line-height: 3rem;
+      font-size: rem(22);
+      margin-left: 1rem;
+      color: #333;
+      margin-bottom: 2rem;
+    }
+    .loginBtn {
+      margin-left: 1rem;
+      background: $frontPrimary !important;
+      padding: 0 0.5rem;
+      max-width: rem(276);
+      height: 70px;
+      border-radius: 35px !important;
+      .text {
+        font-weight: bold;
+        font-size: 1.5rem;
+        padding: 0 1rem 0 5rem;
+      }
+    }
+    .mpImg {
+      margin: 5rem 0rem 0 10rem;
+      width: rem(600);
+    }
+    .marquee {
+      position: absolute;
+      width: 80%;
+      top: 100px;
+      .swiper {
+        // max-height: 100px;
+        // min-height: 45px;
+        // height: auto;
+        font-size: 1.2rem;
+        line-height: 1.5em;
+        // background: #ffffff84;
+        //
+        border-radius: 0.25rem;
+        .swiper-slide {
+          > div {
+            padding: 0.5rem 4rem 0.5rem 2rem;
+            background: #ffffff84;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+          }
+          width: 100% !important;
+        }
+        &::before {
+          position: absolute;
+          content: '';
+          left: 16px;
+          width: 4px;
+          height: 22px;
+          top: 12px;
+          z-index: 9;
+          background: #1d9ceb;
+        }
+      }
+      .swiper-button-prev {
+        left: auto;
+        top: 22px;
+        right: 36px;
+      }
+
+      .swiper-button-next {
+        right: 10px;
+        top: 22px;
+      }
+      .swiper-wrapper {
+        width: 100%;
+        padding-right: 6rem;
+        position: relative;
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+        transform: scale(0.45);
+        font-weight: 800;
+      }
+      @include screen('desktop') {
+        position: relative;
+        top: 20px;
+        width: 90%;
+      }
+    }
+    @include screen('desktop') {
+      .v-sheet {
+        display: flex !important;
+        flex-direction: column-reverse;
+        justify-content: center;
+        > div {
+          &:has(h1) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      }
+      .mpImg {
+        margin: 0 2rem;
+        width: rem(500);
+      }
+      .title {
+        margin-top: 3rem;
+        margin-left: 0;
+      }
+      .loginBtn {
+        margin-left: 0;
+      }
+    }
+    @include screen('tablet') {
+      .v-sheet {
+        margin: 0 1rem;
+      }
+      .mpImg {
+        max-width: 360px !important;
+        margin: 0;
+      }
+      .title {
+        text-align: center;
+        line-height: 2rem;
+        span {
+          display: block;
+        }
+      }
+      .logo {
+        max-width: rem(260) !important;
+        margin-left: 1rem;
+      }
+      .loginBtn {
+        transform: scale(0.8);
+      }
+    }
+    @include screen('mobile') {
+      .v-sheet {
+        margin: 0;
+      }
+      .mpImg {
+        max-width: 300px;
+      }
+    }
+  }
+}

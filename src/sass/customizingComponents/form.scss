@@ -1,0 +1,121 @@
+// .formGrp {
+//   label {
+//     font-weight: 500;
+//     margin: 0 0.5rem;
+//   }
+// }
+input:-internal-autofill-selected {
+  background: #fff !important;
+}
+.formGrp {
+  label {
+    font-weight: 500;
+    margin: 0 0.5rem;
+    margin-bottom: 0.5rem;
+    // display: inline-block;
+    // font-size: 1rem;
+  }
+  button {
+    font-size: 1rem;
+  }
+  &.datePick {
+    .tilde {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      @include screen('mobile') {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  .necessary {
+    color: $error;
+    text-decoration: none;
+  }
+  .v-messages {
+    font-size: 0.875rem;
+
+    .v-messages__message {
+      line-height: 1rem;
+    }
+  }
+  .v-input:not(.v-checkbox) {
+    border: none;
+    .v-field {
+      background: #fff; //lighten(#e5e5e3, 6%);
+      border-radius: rem(20);
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      // .v-field__field {
+      //   height: rem(48);
+      //   input {
+      //     height: rem(48);
+      //   }
+      // }
+      input {
+        &::placeholder {
+          color: #000;
+          opacity: 1;
+        }
+      }
+    }
+    .v-field__input {
+      // height: 3rem;
+    }
+    .v-field__prepend-inner {
+      > .v-icon {
+        color: #000;
+        opacity: 1;
+        font-size: rem(20);
+        margin-right: 0.25rem;
+      }
+    }
+    .v-field--variant-filled .v-field__overlay {
+      background-color: unset;
+    }
+    .v-field__outline {
+      display: none;
+    }
+  }
+  .v-switch {
+    .v-selection-control {
+      min-height: rem(40);
+    }
+  }
+}
+.v-field__field {
+  &:has(input[type='file']) {
+    .v-field__input {
+      height: 40px;
+      padding: 0.25rem 1rem;
+      min-height: 2.2rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+.formExpansion {
+  margin: 0.5rem 0 1.25rem 0;
+  .v-expansion-panel__shadow {
+    box-shadow: none;
+  }
+  .v-expansion-panel-title {
+    padding: 0.5rem;
+    color: $frontPrimary;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    background: rgb(227, 246, 253);
+  }
+  .v-expansion-panel-text__wrapper {
+    border-radius: 0.75rem;
+    padding: 0.75em;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+  .v-expansion-panel--active > .v-expansion-panel-title:not(.v-expansion-panel-title--static) {
+    min-height: 48px;
+  }
+}

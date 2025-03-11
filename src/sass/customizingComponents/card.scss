@@ -1,0 +1,662 @@
+.albumCard {
+  max-width: unset !important;
+  height: 100%;
+
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .v-img {
+    margin: 0.75rem;
+    margin-bottom: 0;
+    border-radius: rem(4);
+    height: rem(200);
+    max-height: rem(200);
+  }
+  .v-card-item {
+    display: flex;
+    align-items: flex-start;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .v-card-item__content {
+    .v-card-subtitle {
+      font-weight: 700;
+      font-size: 1em;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
+  .v-card-text {
+    align-items: self-end;
+    display: flex;
+  }
+
+  .iconList {
+    font-weight: 700;
+    .v-col {
+      display: flex;
+      align-items: center;
+    }
+    i {
+      font-size: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+.albumCardList {
+  &.v-row {
+    margin-top: 0 !important;
+  }
+  &.list {
+    display: block;
+    > div {
+      max-width: unset;
+      border-bottom: 1px solid #ccc;
+      &:last-child {
+        border: none;
+      }
+    }
+    .cardContainer {
+      flex-direction: row;
+      background-color: unset;
+    }
+    @include screen('tablet') {
+      .cardContainer {
+        display: block;
+      }
+      .albumCard {
+        .cardContainer {
+          .v-img {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            max-width: inherit;
+            aspect-ratio: 4 / 3;
+            height: auto;
+            max-height: unset;
+          }
+        }
+      }
+      .v-card-item {
+        padding: 0 0 1rem 0;
+      }
+    }
+    .v-img {
+      max-width: rem(200);
+      height: 150px;
+      width: rem(200);
+    }
+    .v-card {
+      display: block;
+      box-shadow: unset;
+      background: unset;
+      padding: 0.5rem;
+    }
+    .albumCard {
+      .v-img {
+        margin: 0 0.5rem 0 0;
+      }
+      .v-card-item {
+        padding-top: 0;
+      }
+      .iconList {
+        justify-content: end;
+        .v-col {
+          flex-grow: unset;
+        }
+      }
+    }
+    .v-card-text {
+      padding-bottom: 0;
+    }
+  }
+}
+.mediaCardList {
+  .v-col {
+    flex: 0 0 10%;
+    max-width: 10%;
+    .v-img {
+      height: 80px;
+    }
+  }
+}
+.photoCard {
+  width: 9.5%;
+  margin: 0.25%;
+
+  &.v-card {
+    width: 100%;
+  }
+  position: relative;
+  .checkbox {
+    z-index: 1;
+    top: -0.5rem;
+    position: absolute;
+  }
+  .img {
+    position: relative;
+    margin: 0.25rem;
+
+    label {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      opacity: 1;
+      z-index: 1;
+    }
+    .v-img {
+      min-height: 80px;
+    }
+  }
+  &.v-card {
+    .v-card-title {
+      line-height: 1rem;
+      font-size: 0.8rem;
+    }
+  }
+  .v-card-title {
+    cursor: pointer;
+    font-size: 1em;
+  }
+  .info {
+    .v-card-item {
+      padding: 0;
+      margin: 0.5rem;
+    }
+  }
+}
+.dialogCard {
+  .v-card-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: $primary;
+  }
+  .v-radio-group {
+    .v-input {
+      width: 160px;
+      flex: none;
+    }
+  }
+  .editBtn {
+    top: rem(24);
+    position: absolute;
+    right: rem(24);
+    .v-btn__content {
+      font-size: 1rem;
+    }
+  }
+  .btn {
+    min-width: 120px;
+  }
+  .info,
+  .infoList {
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+  .paymentList {
+    .v-list-item {
+      min-height: 4rem;
+      border-bottom: 1px solid scale-color($gray3, $lightness: 35%); //lighten($gray3, 35%);
+    }
+  }
+  .closeBtn {
+    margin-top: -1rem;
+  }
+
+  .text {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  .signBlock {
+    > div {
+      @include screen('tablet') {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.photoBlock {
+  max-width: rem(500);
+  > div {
+    .box {
+      border: 1px solid #ccc;
+      border-radius: 2.5rem;
+      height: 100%;
+      aspect-ratio: 1/1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.05rem;
+      position: relative;
+      background: url('@/assets/images/add_bg.png') center center no-repeat;
+      background-color: #fff;
+      width: 100%;
+      img {
+        background-color: #fff;
+      }
+      &:has(.v-img) {
+        background: #fff;
+      }
+    }
+    .deleteBtn {
+      position: absolute;
+      top: -0.5rem;
+      right: -0.5rem;
+      z-index: 2;
+    }
+    .img {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      max-width: 100%;
+      align-items: center;
+      border-radius: 2.5rem;
+    }
+  }
+}
+.signBlock {
+  .box {
+    display: flex;
+    padding: 0.5rem;
+  }
+  .fullBtn {
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: 0;
+    height: 2rem;
+    min-width: 3rem;
+    width: 2rem;
+    background: url('@/assets/images/full_icon.png') center center no-repeat;
+  }
+  > div {
+    background-color: scale-color(#e5e5e3, $lightness: 60%); //lighten(#e5e5e3, 6%);
+    min-height: 8rem;
+    border-radius: 1rem;
+  }
+}
+.idBlock {
+  max-height: rem(450);
+  border-radius: 1rem;
+  background-color: #e5e5e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .bluetoothImg {
+    width: rem(280);
+    height: rem(300);
+    padding: 1rem;
+  }
+}
+
+.methodDialog {
+}
+.v-card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+  border-radius: 1rem !important;
+  .v-card-text {
+    font-size: 1rem;
+  }
+}
+.commentCard {
+  margin-bottom: 2rem;
+  .v-textarea {
+    .v-field__input {
+      mask-image: none;
+      border-radius: 1rem;
+      background-color: scale-color(#f4f4f3, $lightness: -3%) !important; //darken(#f4f4f3, 3%) !important;
+    }
+  }
+  .btnGrp {
+    flex-wrap: wrap;
+  }
+}
+.itemCard {
+  margin-bottom: 2rem;
+  .v-card-title {
+    font-weight: bold;
+    color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .deleteBtn {
+      // &.v-btn--icon.v-btn--density-default {
+      //   height: 26px;
+      // }
+    }
+  }
+  .v-card-item:has(.deleteBtn) {
+    .v-card-title {
+      margin-top: 2.5px !important;
+    }
+    + .v-card-text {
+      margin-top: -10px;
+    }
+  }
+  .v-card-text {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        width: 50%;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        span {
+          color: $grayText;
+          display: inline-block;
+          padding-right: 1rem;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            top: 3px;
+            right: 0.5rem;
+            height: 1rem;
+            background-color: #ccc;
+          }
+        }
+        @media screen and (max-width: 1680px) {
+          margin-bottom: 0.75rem;
+          span {
+            display: block;
+            &::after {
+              display: none;
+            }
+          }
+        }
+        @include screen('desktop') {
+          width: 100%;
+          margin-bottom: 0.75rem;
+          span {
+            display: inline-block;
+            &::after {
+              display: block;
+            }
+          }
+        }
+        @include screen('notebook') {
+          margin-bottom: 0.5rem;
+          width: 50%;
+          span {
+            display: inline-block;
+            &::after {
+              display: block;
+            }
+          }
+        }
+        @include screen('mobile') {
+          span {
+            &::after {
+              display: none;
+            }
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+.btnGrp {
+  flex-wrap: wrap !important;
+  .btnWidth {
+    min-width: rem(100);
+  }
+  // @media screen and (max-width: 1400px) {
+  //   .v-btn {
+  //     width: 45%;
+
+  //     margin-bottom: 0.5rem;
+  //   }
+  // }
+  // @include screen('notebook') {
+  //   .v-btn {
+  //     width: auto;
+  //   }
+  // }
+}
+.logCard {
+  @extend .itemCard;
+  .v-card-text {
+    ul {
+      li {
+        span {
+          display: block;
+          margin-bottom: 0;
+          &::after {
+            display: none;
+          }
+        }
+        width: 100%;
+      }
+    }
+  }
+}
+.signDialog {
+  @include screen('mobile') {
+    .v-overlay__content {
+      max-width: unset !important;
+    }
+    .v-card {
+      // height: calc(100vh - 48px);
+    }
+  }
+}
+
+.authCard {
+  .v-card-text {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    .title {
+      position: relative;
+      padding-left: 2.5rem;
+      height: 1.5rem;
+
+      font-size: rem(18);
+      > span {
+        margin: 0 0.5rem;
+      }
+      &::before {
+        position: absolute;
+        content: '';
+        top: -0.5rem;
+        left: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: url('@/assets/images/user-icon.png') top right no-repeat;
+        background-size: contain;
+      }
+    }
+    .v-btn {
+      margin: 0 0.5rem;
+    }
+    .status {
+      margin-left: auto;
+      & > span {
+        &:first-child {
+          color: $grayText;
+          margin-right: 1rem;
+          &::after {
+            top: 0.35rem;
+            right: -0.5rem;
+            width: 1rem;
+            height: 1rem;
+            content: '';
+            position: absolute;
+            border-right: 1px solid $grayText;
+          }
+        }
+
+        position: relative;
+      }
+    }
+  }
+}
+
+.qrCodeCard {
+  .v-card-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    > div {
+      padding: 1rem;
+      background: #fff;
+      border-radius: 1rem;
+    }
+  }
+  .v-img {
+    width: 200px;
+  }
+  .text {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+  }
+}
+.addAuthCard {
+  &.v-card {
+    background-color: transparent;
+    box-shadow: none !important;
+  }
+  .v-card-text {
+    display: flex;
+    align-items: center;
+  }
+  .title {
+    position: relative;
+    padding-left: 2.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    > span {
+      margin: 0 0.5rem;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      top: -0.5rem;
+      left: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: url('@/assets/images/user-add-icon.png') top right no-repeat;
+      background-size: contain;
+    }
+  }
+}
+.methodCard {
+  height: 120px !important;
+  .info {
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icon {
+        text-align: center;
+        width: rem(80);
+        margin-right: 1rem;
+      }
+      .v-btn {
+        width: calc(100% - 120px);
+      }
+    }
+  }
+}
+.pcMethod {
+  @include screen('mobile') {
+    display: none;
+  }
+}
+.cardGrp {
+  .v-card {
+    margin-bottom: 0.25rem;
+    height: 100%;
+    .cardContainer {
+      height: 100%;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+  &:has(.authCard) {
+    container-type: inline-size;
+    @container (max-width: 800px) {
+      .authCard {
+        .info {
+          > div {
+            flex-wrap: wrap;
+          }
+          .title {
+            width: 100%;
+            margin-bottom: 1rem;
+          }
+          .v-btn {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    @include screen('tablet') {
+      .authCard {
+        .info {
+          .title {
+            width: auto;
+            margin-bottom: 0rem;
+          }
+        }
+      }
+    }
+  }
+  &:has(.methodCard) {
+    container-type: inline-size;
+    @container (max-width: 1140px) {
+      > div {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+    @container (max-width: 760px) {
+      // > div {
+      //   flex: 0 0 100%;
+      //   max-width: 100%;
+      // }
+      .methodCard {
+        .info {
+          > div {
+            .icon {
+              width: rem(80);
+              margin-right: 1rem;
+            }
+            .v-btn {
+              width: calc(100% - 96px);
+            }
+          }
+        }
+      }
+    }
+    @container (max-width: 700px) {
+      > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    // @include screen('tablet') {
+    //   > div {
+    //     flex: 0 0 100%;
+    //     max-width: 100%;
+    //   }
+    // }
+  }
+}

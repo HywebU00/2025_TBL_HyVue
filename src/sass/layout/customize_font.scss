@@ -1,0 +1,15 @@
+//body 預設字級
+body {
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.45em;
+  font-family: $fontFamily;
+  -webkit-text-size-adjust: none;
+  .v-btn--size-default {
+    --v-btn-size: 1rem;
+    --v-btn-height: 40px;
+  }
+  .v-btn--slim {
+    padding: 0 1rem;
+  }
+}

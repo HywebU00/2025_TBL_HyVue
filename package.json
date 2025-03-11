@@ -1,0 +1,32 @@
+{
+  "name": "vuetify3_project",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@mdi/font": "7.0.96",
+    "@vuepic/vue-datepicker": "^7.4.1",
+    "@vueup/vue-quill": "^1.2.0",
+    "core-js": "^3.8.3",
+    "gsap": "^3.12.2",
+    "roboto-fontface": "*",
+    "swiper": "^11.1.15",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.0",
+    "vuetify": "^3.7.2",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.3",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "sass": "^1.79.3",
+    "vite": "^3.1.9",
+    "vite-plugin-vuetify": "^1.0.0-alpha.12"
+  }
+}

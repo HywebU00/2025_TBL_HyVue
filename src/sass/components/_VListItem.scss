@@ -1,0 +1,35 @@
+.v-list-item--density-default.v-list-item--one-line {
+  min-height: unset;
+}
+.v-list-item__prepend > .v-badge .v-icon,
+.v-list-item__prepend > .v-icon {
+  margin-inline-end: 0.25rem;
+  font-size: 20px !important;
+  opacity: 1 !important;
+}
+.v-list-item--nav .v-list-item-title {
+  line-height: 1.5em;
+}
+.v-list-item--rounded {
+  border-radius: 20px !important;
+}
+.v-list-group--open {
+  position: relative;
+  > .v-list-item--active {
+    background: $primary-gradient; //$primary;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  &::after {
+    position: absolute;
+    top: 44px;
+    width: 208px;
+    height: 25px;
+    content: '';
+    z-index: -1;
+    opacity: 0.6;
+    background: url('@/assets/images/shadow.png') no-repeat;
+    background-size: contain;
+  }
+}

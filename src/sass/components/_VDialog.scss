@@ -1,0 +1,30 @@
+.v-dialog--fullscreen {
+  &.fullscreenDialog {
+    height: calc(100vh - 2rem) !important;
+    width: calc(100vw - 2rem) !important;
+    margin-bottom: 1em !important;
+    .v-card {
+      border-radius: 0.5rem !important;
+      background-color: #f4f4f4;
+    }
+    .v-overlay__scrim {
+      background: rgb(var(--v-theme-on-surface));
+    }
+  }
+  > .v-overlay__content {
+    max-width: 600px !important;
+  }
+  height: calc(100vh - 80px) !important;
+  margin-bottom: 0 !important;
+  .v-overlay__scrim {
+    background: transparent;
+  }
+  .v-card {
+    border-radius: 0rem !important;
+    background-color: #f4f4f4;
+  }
+}
+.v-overlay-scroll-blocked:not(html) {
+  overflow-y: hidden !important;
+  padding-right: 5.6px !important;
+}

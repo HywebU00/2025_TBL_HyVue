@@ -1,0 +1,48 @@
+//body 預設字級
+body {
+  .v-theme--front {
+    h2 {
+      color: $frontPrimary;
+    }
+    .v-list-group--open {
+      > .v-list-item--active {
+        background-color: $frontPrimary;
+      }
+    }
+    .userInfo {
+      background-color: $frontPrimary;
+    }
+    .itemCard {
+      .v-card-title {
+        color: $frontPrimary;
+      }
+    }
+    main {
+      &.v-main {
+        > div {
+          &::-webkit-scrollbar-thumb {
+            background-color: scale-color($frontPrimary, $lightness: 50%); //lighten($frontPrimary, 50);
+          }
+        }
+      }
+    }
+  }
+  &:has(.v-theme--front) {
+    .v-overlay-container {
+      .v-card {
+        .v-card-title {
+          color: $frontPrimary;
+        }
+      }
+    }
+  }
+  button.v-btn {
+    &.bg-primary {
+      background: $primary-btn-gradient !important;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    &.bg-secondary {
+      background: $secondary-btn-gradient !important;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.loginPage {
+  background: url('@/assets/images/bg_login.jpg') center center;
+  background-size: cover;
+  > .loginCard {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    max-width: rem(460);
+    > div {
+      border-radius: rem(30);
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+      width: 100%;
+      padding: rem(32);
+      position: relative;
+      animation: move 1s;
+    }
+    .showPassword {
+      margin-top: rem(16);
+      margin-bottom: rem(16);
+      cursor: pointer;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+    }
+    .v-input:not(.v-checkbox) {
+      margin-top: rem(16);
+      border: none;
+      .v-field {
+        background: #fcfbfb;
+        border-radius: rem(20);
+        .v-field__field {
+          input {
+            height: rem(48);
+          }
+        }
+        input {
+          &::placeholder {
+            color: #000;
+            opacity: 1;
+          }
+        }
+      }
+      .v-field__prepend-inner {
+        > .v-icon {
+          color: #000;
+          opacity: 1;
+          font-size: rem(20);
+          margin-right: 0.25rem;
+        }
+      }
+      .v-field__outline {
+        display: none;
+      }
+    }
+    @keyframes move {
+      from {
+        top: -30px;
+      }
+      to {
+        top: 0px;
+      }
+    }
+    @include screen('desktop') {
+      width: 50%;
+    }
+    @include screen('notebook') {
+      width: 90%;
+    }
+    .logo {
+      margin-bottom: 1.5rem;
+    }
+    .list {
+      margin-bottom: 1rem;
+      label,
+      button {
+        font-weight: bold;
+      }
+    }
+    .loginBtn {
+      padding: 0.9rem;
+      font-weight: bold;
+      font-size: 1rem;
+      height: unset;
+      background: $primary-gradient !important;
+      margin-bottom: 2.25rem;
+    }
+  }
+}
