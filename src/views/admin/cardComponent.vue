@@ -1,885 +1,106 @@
 <template>
   <v-container class="container">
+    <div class="d-flex justify-end loginName">
+      <div class="mt-2 title"><span>志工</span>王小明</div>
+      <v-btn class="mb-4">登入</v-btn>
+    </div>
     <v-breadcrumbs :items="['首頁', '節點', '節點']"></v-breadcrumbs>
-
-    <h2>活動管理</h2>
-    <!-- 篩選器 start -->
-    <v-row class="formGrp filterList d-sm-flex">
-      <v-col cols="6" sm="4" md="4" lg="2" class="pt-0">
-        <v-select
-          label="全部行政區"
-          single-line
-          density="compact"
-          hide-details="auto"
-          :items="['選項ㄧ', '選項二', '選項三']"
-        ></v-select>
-      </v-col>
-      <v-col cols="6" sm="4" md="4" lg="2" class="pt-0">
-        <v-select
-          label="全部村里"
-          single-line
-          density="compact"
-          hide-details="auto"
-          :items="['選項ㄧ', '選項二', '選項三']"
-        ></v-select>
-      </v-col>
-      <v-col cols="6" sm="4" md="4" lg="2" class="pt-0">
-        <v-select
-          label="所有活動類型"
-          single-line
-          density="compact"
-          hide-details="auto"
-          :items="['選項ㄧ', '選項二', '選項三']"
-        ></v-select>
-      </v-col>
-      <v-col cols="6" sm="4" md="4" lg="2" class="pt-0">
-        <v-select
-          label="所有規則"
-          single-line
-          density="compact"
-          hide-details="auto"
-          :items="['選項ㄧ', '選項二', '選項三']"
-        ></v-select>
-      </v-col>
-      <v-col cols="6" sm="4" md="4" lg="2" class="pt-0">
-        <v-select
-          label="所有審核狀態"
-          single-line
-          density="compact"
-          hide-details="auto"
-          :items="['選項ㄧ', '選項二', '選項三']"
-        ></v-select>
-      </v-col>
-      <v-col cols="6" sm="4" md="4" lg="2" class="pt-0">
-        <v-select
-          label="效期(2)"
-          single-line
-          density="compact"
-          hide-details="auto"
-          :items="['選項ㄧ', '選項二', '選項三']"
-        ></v-select> </v-col
-    ></v-row>
-    <!-- 篩選器 end -->
-    <!-- 按鈕列 start -->
-    <v-row>
-      <!-- 搜尋列 start -->
-      <v-col cols="auto" class="py-0 d-flex align-center formGrp searchList">
-        <v-text-field
-          label="標題"
-          density="compact"
-          single-line
-          hide-details="auto"
-        ></v-text-field>
-        <v-btn variant="flat" class="btn">查詢</v-btn>
-      </v-col>
-      <!-- 搜尋列 end -->
-      <!-- <v-col class="py-0 d-flex align-center" cols="auto">
-        <v-btn variant="flat" color="secondary" class="mr-2">
-          刪除已選取帳號(0)</v-btn
-        >
-      </v-col> -->
-      <v-col class="py-0 ml-auto btnList" cols="auto">
-        <div class="justify-end d-flex flex-wrap">
-          <v-dialog class="dialogCard" max-width="500" scrollable>
-            <template v-slot:activator="{ props: activatorProps }">
-              <v-btn variant="flat" class="mx-1 my-1" v-bind="activatorProps"
-                >新增發放</v-btn
-              >
-            </template>
-            <template v-slot:default="{ isActive }">
-              <v-card title="新增發放">
-                <v-card-text class="px-4">
-                  <div>
-                    <v-form>
-                      <v-container>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >活動日期
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <datepickerModalVue> </datepickerModalVue>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >標題
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <v-text-field
-                              label="文字標準表單"
-                              density="compact"
-                              single-line
-                              hide-details="auto"
-                            ></v-text-field>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >規則
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <v-select
-                              label="下拉式選單"
-                              single-line
-                              density="compact"
-                              hide-details="auto"
-                              :items="['選項ㄧ', '選項二', '選項三']"
-                            ></v-select>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col
-                            class="pb-2 justify-space-between d-flex"
-                            cols="12"
-                          >
-                            <label class="text-gray font-weight-bold" for=""
-                              >指定名單
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              >
-                            </label>
-                            <v-btn
-                              size="small"
-                              text="下載範本"
-                              variant="text"
-                            ></v-btn>
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <v-file-input
-                              prepend-icon=""
-                              append-inner-icon="mdi-file-upload-outline"
-                              hide-details
-                            ></v-file-input>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >經費來源
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <v-select
-                              label="下拉式選單"
-                              single-line
-                              density="compact"
-                              hide-details="auto"
-                              :items="['選項ㄧ', '選項二', '選項三']"
-                            ></v-select>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >發放區域
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <p class="px-2">大安區- 光信里</p>
-                          </v-col>
-                        </v-row>
-                        <v-expansion-panels class="formExpansion">
-                          <v-expansion-panel>
-                            <v-expansion-panel-title elevation-0
-                              >進階選項</v-expansion-panel-title
-                            >
-                            <v-expansion-panel-text>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >名額限制
-                                    <abbr
-                                      class="necessary"
-                                      title="為必填(選)欄位,不能為空白。"
-                                      >*</abbr
-                                    ></label
-                                  >
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-text-field
-                                    label="文字標準表單"
-                                    density="compact"
-                                    single-line
-                                    hide-details="auto"
-                                  ></v-text-field>
-                                </v-col>
-                              </v-row>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >一般民眾年齡限制
-                                  </label>
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-row>
-                                    <v-col>
-                                      <v-select
-                                        label="最小年齡"
-                                        single-line
-                                        density="compact"
-                                        hide-details="auto"
-                                        :items="['選項ㄧ', '選項二', '選項三']"
-                                      ></v-select>
-                                    </v-col>
-                                    <v-col>
-                                      <v-select
-                                        label="最大年齡"
-                                        single-line
-                                        density="compact"
-                                        hide-details="auto"
-                                        :items="['選項ㄧ', '選項二', '選項三']"
-                                      ></v-select>
-                                    </v-col>
-                                  </v-row>
-                                </v-col>
-                              </v-row>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >原住民年齡限制
-                                  </label>
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-row>
-                                    <v-col>
-                                      <v-select
-                                        label="最小年齡"
-                                        single-line
-                                        density="compact"
-                                        hide-details="auto"
-                                        :items="['選項ㄧ', '選項二', '選項三']"
-                                      ></v-select>
-                                    </v-col>
-                                    <v-col>
-                                      <v-select
-                                        label="最大年齡"
-                                        single-line
-                                        density="compact"
-                                        hide-details="auto"
-                                        :items="['選項ㄧ', '選項二', '選項三']"
-                                      ></v-select>
-                                    </v-col>
-                                  </v-row>
-                                </v-col>
-                              </v-row>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >性別限制
-                                  </label>
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-select
-                                    label="性別"
-                                    single-line
-                                    density="compact"
-                                    hide-details="auto"
-                                    :items="['選項ㄧ', '選項二', '選項三']"
-                                  ></v-select>
-                                </v-col>
-                              </v-row>
-                            </v-expansion-panel-text>
-                          </v-expansion-panel>
-                        </v-expansion-panels>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >啟用拍照
-                            </label>
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <v-switch
-                              class="ml-2"
-                              color="primary"
-                              inset
-                              hide-details="auto"
-                              single-line
-                            ></v-switch>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >啟用電子簽名
-                            </label>
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <v-switch
-                              class="ml-2"
-                              color="primary"
-                              hide-details="auto"
-                              inset
-                            ></v-switch>
-                          </v-col>
-                        </v-row>
-                      </v-container>
-                    </v-form>
-                  </div>
-                </v-card-text>
-                <v-card-actions class="d-block">
-                  <div class="d-flex justify-center pa-4 pt-2 flex-wrap">
-                    <v-btn
-                      class="bg-secondary btn mx-2 mb-2 mb-sm-0"
-                      text="取消"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                    <v-btn
-                      text="確認送審"
-                      class="btn mx-2 mb-2 mb-sm-0"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                    <v-btn
-                      text="暫存草稿"
-                      class="btn mx-2 mb-2 mb-sm-0"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                  </div>
-                </v-card-actions>
-              </v-card>
-            </template>
-          </v-dialog>
-          <v-dialog class="dialogCard" max-width="500" scrollable>
-            <template v-slot:activator="{ props: activatorProps }">
-              <v-btn variant="flat" class="mx-1 my-1" v-bind="activatorProps"
-                >新增報名</v-btn
-              >
-            </template>
-            <template v-slot:default="{ isActive }">
-              <v-card title="新增報名">
-                <v-card-text class="px-4">
-                  <div>
-                    <v-form>
-                      <v-container>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >活動日期
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <datepickerModalVue> </datepickerModalVue>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >標題
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <v-text-field
-                              label="文字標準表單"
-                              density="compact"
-                              single-line
-                              hide-details="auto"
-                            ></v-text-field>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >是否收費
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <v-select
-                              label="下拉式選單"
-                              single-line
-                              density="compact"
-                              hide-details="auto"
-                              :items="['選項ㄧ', '選項二', '選項三']"
-                            ></v-select>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >費用設定-里民
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <v-text-field
-                              placeholder="0"
-                              density="compact"
-                              single-line
-                              hide-details="auto"
-                            ></v-text-field>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >費用設定-非里民
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <v-text-field
-                              placeholder="0"
-                              density="compact"
-                              single-line
-                              hide-details="auto"
-                            ></v-text-field>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >經費來源
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <v-select
-                              label="下拉式選單"
-                              single-line
-                              density="compact"
-                              hide-details="auto"
-                              :items="['選項ㄧ', '選項二', '選項三']"
-                            ></v-select>
-                          </v-col>
-                        </v-row>
-                        <v-row class="formGrp">
-                          <v-col class="pb-2" cols="12" lg="">
-                            <label class="text-gray font-weight-bold" for=""
-                              >發放區域
-                              <abbr
-                                class="necessary"
-                                title="為必填(選)欄位,不能為空白。"
-                                >*</abbr
-                              ></label
-                            >
-                          </v-col>
-                          <v-col cols="12" class="pt-0">
-                            <p class="px-2">大安區- 光信里</p>
-                          </v-col>
-                        </v-row>
-                        <v-expansion-panels class="formExpansion">
-                          <v-expansion-panel>
-                            <v-expansion-panel-title elevation-0
-                              >進階選項</v-expansion-panel-title
-                            >
-                            <v-expansion-panel-text>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >名額限制
-                                    <abbr
-                                      class="necessary"
-                                      title="為必填(選)欄位,不能為空白。"
-                                      >*</abbr
-                                    ></label
-                                  >
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-text-field
-                                    label="文字標準表單"
-                                    density="compact"
-                                    single-line
-                                    hide-details="auto"
-                                  ></v-text-field>
-                                </v-col>
-                              </v-row>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >一般民眾年齡限制
-                                  </label>
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-row>
-                                    <v-col>
-                                      <v-select
-                                        label="最小年齡"
-                                        single-line
-                                        density="compact"
-                                        hide-details="auto"
-                                        :items="['選項ㄧ', '選項二', '選項三']"
-                                      ></v-select>
-                                    </v-col>
-                                    <v-col>
-                                      <v-select
-                                        label="最大年齡"
-                                        single-line
-                                        density="compact"
-                                        hide-details="auto"
-                                        :items="['選項ㄧ', '選項二', '選項三']"
-                                      ></v-select>
-                                    </v-col>
-                                  </v-row>
-                                </v-col>
-                              </v-row>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >原住民年齡限制
-                                  </label>
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-row>
-                                    <v-col>
-                                      <v-select
-                                        label="最小年齡"
-                                        single-line
-                                        density="compact"
-                                        hide-details="auto"
-                                        :items="['選項ㄧ', '選項二', '選項三']"
-                                      ></v-select>
-                                    </v-col>
-                                    <v-col>
-                                      <v-select
-                                        label="最大年齡"
-                                        single-line
-                                        density="compact"
-                                        hide-details="auto"
-                                        :items="['選項ㄧ', '選項二', '選項三']"
-                                      ></v-select>
-                                    </v-col>
-                                  </v-row>
-                                </v-col>
-                              </v-row>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >性別限制
-                                  </label>
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-select
-                                    label="性別"
-                                    single-line
-                                    density="compact"
-                                    hide-details="auto"
-                                    :items="['選項ㄧ', '選項二', '選項三']"
-                                  ></v-select>
-                                </v-col>
-                              </v-row>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >啟用拍照
-                                  </label>
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-switch
-                                    class="ml-2"
-                                    color="primary"
-                                    inset
-                                    hide-details="auto"
-                                    single-line
-                                  ></v-switch>
-                                </v-col>
-                              </v-row>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >啟用電子簽名
-                                  </label>
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-switch
-                                    class="ml-2"
-                                    color="primary"
-                                    hide-details="auto"
-                                    inset
-                                  ></v-switch>
-                                </v-col>
-                              </v-row>
-                            </v-expansion-panel-text>
-                          </v-expansion-panel>
-                        </v-expansion-panels>
-                      </v-container>
-                    </v-form>
-                  </div>
-                </v-card-text>
-                <v-card-actions class="d-block">
-                  <div class="d-flex justify-center pa-4 pt-2">
-                    <v-btn
-                      class="bg-secondary btn mx-2"
-                      text="取消"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                    <v-btn
-                      text="確認送審"
-                      class="btn mx-2"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                    <v-btn
-                      text="暫存草稿"
-                      class="btn mx-2"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                  </div>
-                </v-card-actions>
-              </v-card>
-            </template>
-          </v-dialog>
-        </div>
-      </v-col>
-    </v-row>
-    <!-- 按鈕列 end -->
-    <v-row class="cardGrp">
-      <template v-for="i in 3" :key="i">
-        <v-col md="6" lg="4" sm="6" cols="12">
-          <v-card class="itemCard">
-            <div class="cardContainer">
-              <div class="info">
-                <v-card-item>
-                  <v-card-title class="mt-3">光信里中元普渡活動</v-card-title>
-                </v-card-item>
-                <v-card-text>
-                  <v-divider class="mb-2"></v-divider>
-                  <ul>
-                    <li><span>類型</span>物資發放</li>
-                    <li><span>規則</span>每戶每人領取一份</li>
-                    <li><span>發放人員</span>透過里辦</li>
-                    <li><span>經費來源</span>里鄰建設服</li>
-                    <li><span>區域</span>內湖區西康里</li>
-                    <li><span>已簽收/上線人數</span>32/無</li>
-                    <li><span>啟用拍照</span>Yes</li>
-                    <li><span>啟用電子簽名</span>32/無</li>
-                    <li><span>審核</span>No</li>
-                    <li><span>發放日期</span>2024/9/10</li>
-                  </ul>
-                </v-card-text>
-                <v-card-actions class="d-flex justify-center mb-6 btnGrp">
-                  <v-btn variant="flat" color="primary"> 活動內容</v-btn>
-
-                  <v-dialog class="dialogCard" max-width="500" scrollable>
-                    <template v-slot:activator="{ props: activatorProps }">
-                      <v-btn
-                        variant="flat"
-                        color="primary"
-                        v-bind="activatorProps"
-                      >
-                        匯出名單
-                      </v-btn>
-                    </template>
-                    <template v-slot:default="{ isActive }">
-                      <v-card title="匯出名單">
-                        <v-card-text class="px-4">
-                          <div>
-                            <h4 class="text-gray subtitle ml-3">
-                              名單將以加密壓縮檔案下載，請設定您的密碼！
-                            </h4>
-                            <v-form>
-                              <v-container>
-                                <v-row class="formGrp">
-                                  <v-col class="pb-2" cols="12" lg="">
-                                    <label
-                                      class="text-gray font-weight-bold"
-                                      for=""
-                                      >檔案格式
-                                      <abbr
-                                        class="necessary"
-                                        title="為必填(選)欄位,不能為空白。"
-                                        >*</abbr
-                                      ></label
-                                    >
-                                  </v-col>
-                                  <v-col cols="12" class="pt-0">
-                                    <v-select
-                                      label="下拉式選單"
-                                      single-line
-                                      density="compact"
-                                      hide-details="auto"
-                                      :items="[
-                                        'Microsoft Excel(.xlsx)',
-                                        'OpenDocument 試算表(.ods) ',
-                                      ]"
-                                    ></v-select>
-                                  </v-col>
-                                </v-row>
-                                <v-row class="formGrp">
-                                  <v-col class="pb-2" cols="12" lg="">
-                                    <label
-                                      class="text-gray font-weight-bold"
-                                      for=""
-                                      >密碼設定
-                                      <abbr
-                                        class="necessary"
-                                        title="為必填(選)欄位,不能為空白。"
-                                        >*</abbr
-                                      ></label
-                                    >
-                                  </v-col>
-                                  <v-col cols="12" class="pt-0">
-                                    <v-text-field
-                                      label="文字標準表單"
-                                      density="compact"
-                                      single-line
-                                      hide-details="auto"
-                                    ></v-text-field>
-                                  </v-col>
-                                </v-row>
-                                <v-row class="formGrp">
-                                  <v-col class="pb-2" cols="12" lg="">
-                                    <label
-                                      class="text-gray font-weight-bold"
-                                      for=""
-                                      >再次確認密碼
-                                      <abbr
-                                        class="necessary"
-                                        title="為必填(選)欄位,不能為空白。"
-                                        >*</abbr
-                                      ></label
-                                    >
-                                  </v-col>
-                                  <v-col cols="12" class="pt-0">
-                                    <v-text-field
-                                      label="文字標準表單"
-                                      density="compact"
-                                      single-line
-                                      hide-details="auto"
-                                    ></v-text-field>
-                                  </v-col>
-                                </v-row>
-                              </v-container>
-                            </v-form>
-                          </div>
-                        </v-card-text>
-                        <v-card-actions class="d-block">
-                          <div class="d-flex justify-center pa-4 pt-2">
-                            <v-btn
-                              class="bg-secondary btn mx-2"
-                              text="取消"
-                              variant="flat"
-                              @click="isActive.value = false"
-                            ></v-btn>
-                            <v-btn
-                              text="確認匯出"
-                              class="btn mx-2"
-                              variant="flat"
-                              @click="isActive.value = false"
-                            ></v-btn>
-                          </div>
-                        </v-card-actions>
-                      </v-card>
-                    </template>
-                  </v-dialog>
-                </v-card-actions>
+    <h2>簽收作業</h2>
+    <div class="">
+      <v-row class="">
+        <!-- 左側選單start -->
+        <v-col cols="12" md="4">
+          <div class="position-sticky stickyBlock">
+            <v-card class="itemCard" v-for="i in 1" :key="i">
+              <div class="cardContainer">
+                <div class="info">
+                  <v-card-item>
+                    <v-card-title class="mt-3">慰問品發放</v-card-title>
+                  </v-card-item>
+                  <v-card-text>
+                    <v-divider class="mb-2"></v-divider>
+                    <ul>
+                      <li><span>類型</span>物資發放</li>
+                      <li><span>規則</span>每戶每人領取一份</li>
+                      <li><span>區域</span>內湖區西康里</li>
+                      <li><span>已簽收/上線人數</span>32/無</li>
+                      <li><span>審核</span>已通過</li>
+                      <li><span>發放日期</span>2024/9/10</li>
+                    </ul>
+                  </v-card-text>
+                  <v-card-actions class="d-flex justify-center mb-6 btnGrp">
+                    <router-link to="/front/auth">
+                      <v-btn variant="flat" color="primary"> 授權管理 </v-btn>
+                    </router-link>
+                    <router-link to="/front/method">
+                      <v-btn variant="flat" color="primary"> 簽收作業 </v-btn>
+                    </router-link>
+                    <router-link to="/front/card">
+                      <v-btn variant="flat" color="primary"> 簽收紀錄 </v-btn>
+                    </router-link>
+                  </v-card-actions>
+                </div>
               </div>
-            </div>
-          </v-card>
+            </v-card>
+          </div>
         </v-col>
-        <v-col md="6" lg="4" sm="6" cols="12">
-          <v-card class="itemCard">
-            <div class="cardContainer">
-              <div class="info h-100">
-                <v-card-item>
-                  <v-card-title class="mt-3">光信里中元普渡活動</v-card-title>
-                </v-card-item>
-                <v-card-text>
-                  <v-divider class="mb-2"></v-divider>
-                  <ul>
-                    <li><span>類型</span>物資發放</li>
-                    <li><span>規則</span>每戶每人領取一份</li>
-                    <li><span>發放人員</span>透過里辦</li>
-                    <li><span>經費來源</span>里鄰建設服</li>
-                    <li><span>區域</span>內湖區西康里</li>
-                    <li><span>已簽收/上線人數</span>32/無</li>
-                  </ul>
-                </v-card-text>
-                <v-card-actions class="d-flex justify-center mb-6 btnGrp">
-                  <v-btn variant="flat" color="secondary">編輯草稿</v-btn>
-
-                  <v-btn color="error" variant="flat" class="btnWidth">
-                    刪除
-                  </v-btn>
-                </v-card-actions>
-              </div>
-            </div>
+        <!-- 左側選單end -->
+        <!-- 右側選單start -->
+        <v-col cols="12" md="8" class="">
+          <h3 class="mb-5 d-sm-block d-none">
+            <span class="text-primary"> 指定名單</span>
+          </h3>
+          <v-card class="pa-3 pa-md-6 card d-sm-block d-none">
+            <dataTableServer class="dataTable" />
           </v-card>
+          <h3 class="my-5 d-flex align-center">
+            <span class="text-primary d-flex align-center">
+              簽收紀錄
+              <v-btn class="ml-3" variant="flat" color="primary">
+                匯出名單
+              </v-btn></span
+            >
+            <div class="ml-auto formGrp">
+              <v-select
+                color="secondary"
+                label="下拉式選單"
+                single-line
+                density="compact"
+                hide-details="auto"
+                :items="['選項ㄧ', '選項二', '選項三']"
+              ></v-select>
+            </div>
+          </h3>
+          <v-row class="cardGrp">
+            <v-col md="6" sm="6" cols="12" v-for="i in 3" :key="i">
+              <v-card class="itemCard" v-for="i in 1" :key="i">
+                <div class="cardContainer">
+                  <div class="info">
+                    <v-card-item>
+                      <v-card-title class="mt-3">王０明</v-card-title>
+                    </v-card-item>
+                    <v-card-text>
+                      <v-divider class="mb-2"></v-divider>
+                      <ul>
+                        <li><span>戶號</span>EXXXX500</li>
+                        <li><span>身份證</span>FXXXXXX789</li>
+                        <li><span>登記人</span>AXXXXXX789</li>
+                        <li><span>登記時間</span>2024/09/10</li>
+                        <li><span>名單來源</span>系統</li>
+                        <li><span>登記方式</span>台北卡</li>
+                        <li><span>簽收人</span>志工一號</li>
+                        <li><span>備註</span></li>
+                      </ul>
+                    </v-card-text>
+                  </div>
+                </div>
+              </v-card>
+            </v-col>
+          </v-row>
         </v-col>
-      </template>
-    </v-row>
+        <!-- 右側選單end -->
+      </v-row>
+    </div>
   </v-container>
 </template>
 
