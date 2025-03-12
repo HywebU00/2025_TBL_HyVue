@@ -7,44 +7,13 @@ const routes = [
     component: () => import("@/views/layout/adminLayout.vue"),
     children: [
       {
-        path: "system",
-        component: () => import("@/views/admin/systemComponent.vue"),
-      },
-      {
-        path: "component",
-        component: () => import("@/views/admin/Component.vue"),
-      },
-      {
         path: "/",
         component: () => import("@/views/admin/defaultComponent.vue"),
       },
-      {
-        path: "event",
-        component: () => import("@/views/admin/eventComponent.vue"),
-      },
-      {
-        path: "from",
-        component: () => import("@/views/admin/fromComponent.vue"),
-      },
-      {
-        path: "table",
-        component: () => import("@/views/admin/tableComponent.vue"),
-      },
+
       {
         path: "card",
         component: () => import("@/views/admin/cardComponent.vue"),
-      },
-      {
-        path: "widget",
-        component: () => import("@/views/admin/widgetComponent.vue"),
-      },
-      {
-        path: "addNews",
-        component: () => import("@/views/admin/addNewsComponent.vue"),
-      },
-      {
-        path: "mediaPhoto",
-        component: () => import("@/views/admin/mediaPhotoComponent.vue"),
       },
     ],
   },
