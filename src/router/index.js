@@ -66,7 +66,7 @@ const routes = [
     children: [
       {
         path: "/front",
-        component: () => import("@/views/front/defaultComponent.vue"),
+        component: () => import("@/views/front/cardComponent＿.vue"),
       },
       {
         path: "/front/card",

@@ -43,6 +43,10 @@ body {
     }
     &.bg-secondary {
       background: $secondary-btn-gradient !important;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    &.bg-error {
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
   }
 }

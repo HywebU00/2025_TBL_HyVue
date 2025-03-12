@@ -44,35 +44,6 @@
           </v-card>
         </div>
       </div>
-      <div class="d-flex mb-2 justify-center mt-6">
-        <div style="width: 75%" class="mt-1">
-          <h3 class="text-center mb-3 text-secondary">前台頁面列表</h3>
-          <v-card>
-            <v-table>
-              <thead class="bg-secondary">
-                <tr>
-                  <th class="text-left">編號</th>
-                  <th class="text-left">頁面名稱</th>
-                  <th class="text-left">連結</th>
-                  <th class="text-left width">備註</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="(item, index) in front" :key="item.name">
-                  <td>{{ index + 1 }}</td>
-                  <td>{{ item.name }}</td>
-                  <td>
-                    <a :href="item.link">{{ item.link }}</a>
-                  </td>
-                  <td>
-                    <div v-html="item.note"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </v-table>
-          </v-card>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -84,54 +55,17 @@ export default {
       desserts: [
         {
           name: "後台首頁",
-          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/",
+          link: "https://hywebu00.github.io/2025_TBL_HyVue/#/",
           note: "【視窗】新增帳號按鈕可點擊 <br>",
         },
         {
           name: "後台登入頁",
-          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/login",
+          link: "https://hywebu00.github.io/2025_TBL_HyVue/#/login",
           note: "",
         },
         {
-          name: "後台活動內容",
-          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/event",
-          note: "",
-        },
-      ],
-      front: [
-        {
-          name: "前台_管理表單",
-          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front",
-          note: "【視窗】匯出名單按鈕可點擊 <br>【視窗】新增發放按鈕可點擊 <br>【視窗】新增報名按鈕可點擊",
-        },
-        {
-          name: "前台_授權管理",
-          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/auth",
-          note: "【視窗】新增授權按鈕可點擊 <br>",
-        },
-        {
-          name: "前台_簽收紀錄",
-          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/card",
-          note: "【視窗】匯出名單按鈕可點擊  <br> 【視窗】編輯 刪除按鈕可點擊 ",
-        },
-        {
-          name: "前台_簽收作業",
-          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/method",
-          note: "【視窗】讀取身分證按鈕可點擊  <br> 【視窗】編輯 讀取台北通按鈕可點擊 <br> 【視窗】編輯 讀取敬老卡按鈕可點擊 <br> 【視窗】編輯 讀取健保卡按鈕可點擊 <br> 【視窗】編輯 新增手動名單按鈕可點擊 ",
-        },
-        {
-          name: "前台_報名紀錄",
-          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/event",
-          note: "",
-        },
-        {
-          name: "前台_報名作業",
-          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/form",
-          note: "【視窗】讀取身分證按鈕可點擊  <br> 【視窗】編輯 讀取台北通按鈕可點擊 <br> 【視窗】編輯 讀取敬老卡按鈕可點擊 <br> 【視窗】編輯 讀取健保卡按鈕可點擊 <br> 【視窗】編輯 新增手動名單按鈕可點擊 ",
-        },
-        {
-          name: "前台_登入頁",
-          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/mplogin",
+          name: "後台活動內容(卡片樣式)",
+          link: "https://hywebu00.github.io/2025_TBL_HyVue/#/card",
           note: "",
         },
       ],
@@ -143,6 +77,7 @@ export default {
 <style lang="scss" scope>
 .index_bg {
   background: #e9ecef;
+  height: 100vh;
 }
 .index_container {
   padding-top: 5rem;
