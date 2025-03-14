@@ -69,6 +69,19 @@
     }
     .logo {
       margin-bottom: 1.5rem;
+      .v-img {
+        max-width: 260px;
+      }
+      .text {
+        font-weight: bold;
+        color: $primary;
+        margin-top: 1rem;
+        font-size: rem(32);
+        text-align: center;
+        display: block;
+        line-height: 2rem;
+        letter-spacing: 0.1rem;
+      }
     }
     .list {
       margin-bottom: 1rem;

@@ -6,6 +6,7 @@
   margin-inline-end: 0.25rem;
   font-size: 20px !important;
   opacity: 1 !important;
+  color: #f07f4c;
 }
 .v-list-item--nav .v-list-item-title {
   line-height: 1.5em;
@@ -20,6 +21,12 @@
     color: #fff;
     font-size: 1rem;
     font-weight: bold;
+    .v-list-item-title {
+      color: #fff !important;
+    }
+    .v-list-item__prepend > .v-icon {
+      color: #fff;
+    }
   }
   &::after {
     position: absolute;

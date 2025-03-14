@@ -5,8 +5,28 @@ table {
   }
   thead {
     white-space: nowrap;
+    overflow: hidden;
     .v-data-table__td {
-      background: #e5e5e3;
+      background: $thead;
+      .v-data-table-header__content {
+        span {
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+      &:first-child {
+        border-radius: 0.5rem 0 0 0.5rem;
+      }
+      &:last-child {
+        border-radius: 0 0.5rem 0.5rem 0;
+      }
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background: #faede5;
+      }
     }
   }
 }

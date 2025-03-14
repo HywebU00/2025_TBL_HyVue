@@ -10,13 +10,7 @@
             cover
             src="~@/assets/images/logo.png"
           ></v-img>
-          <v-img
-            :width="250"
-            aspect-ratio="1/1"
-            class="mr-auto ml-auto mt-5"
-            cover
-            src="~@/assets/images/logo_text.png"
-          ></v-img>
+          <span class="text"> 後台管理系統 </span>
         </div>
         <v-form>
           <v-text-field

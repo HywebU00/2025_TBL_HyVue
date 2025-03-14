@@ -12,10 +12,18 @@
   }
 }
 .logoImg {
-  margin-left: 2.5rem;
+  margin-left: 1.5rem;
   margin-top: 0.5rem;
   .logo {
-    width: 300px;
+    width: 240px;
+  }
+  .text {
+    font-weight: bold;
+    color: $primary;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    font-size: rem(32);
+    letter-spacing: 0.1rem;
   }
   .v-img {
     &:nth-child(2) {
@@ -23,28 +31,24 @@
       width: 250px;
     }
   }
-  @include screen('tablet') {
+  @include screen('notebook') {
+    margin-left: 1rem;
     .logo {
-      width: 40%;
-      min-width: 85px;
+      max-width: 40vw;
     }
-    .v-img {
-      &:nth-child(2) {
-        min-width: 100px;
-        width: 100%;
-        margin-top: rem(8);
-        margin-left: rem(16);
-      }
+  }
+  @include screen('tablet') {
+    .text {
+      font-size: rem(24);
     }
   }
   @include screen('mobile') {
     .logo {
-      min-width: 70px;
+      max-width: 30vw;
     }
-    .v-img {
-      &:nth-child(2) {
-        min-width: 70px;
-      }
+    .text {
+      font-size: rem(20);
+      margin-bottom: 0.25rem;
     }
   }
 }
@@ -58,7 +62,8 @@
     top: 80px !important;
     overflow: hidden;
     @include screen('notebook') {
-      background: url('@/assets/images/bg_main.jpg') top left !important;
+      // background: url('@/assets/images/bg_main.jpg') top left !important;
+      background: #604c3f;
       box-shadow: rgba(0, 0, 0, 0.1) 2px 0px 3px;
     }
   }
@@ -70,6 +75,7 @@
       flex-grow: 1;
       overflow-y: scroll;
       padding-inline: 4px;
+      margin-top: 1.8rem;
       &::-webkit-scrollbar-track {
         background-color: #f5f5f500;
       }
@@ -92,12 +98,12 @@
     }
     .v-list-item {
       padding: 0.5rem 1rem;
-
       height: rem(44);
       .v-list-item-title {
         font-weight: bold;
         white-space: break-spaces;
-        line-height: 1em;
+        color: #f6daca;
+        line-height: 1.1em;
       }
       + .v-list-group__items {
         .v-list-item {
@@ -110,10 +116,10 @@
           }
         }
       }
+      .v-list-item__append {
+        color: #f6daca;
+      }
     }
-    // @include screen('notebook') {
-    //   box-shadow: rgba(0, 0, 0, 0.1) 2px 0px 3px;
-    // }
   }
 
   .v-list-item__content {
@@ -244,6 +250,7 @@ main {
   // background: #eee;
   &.v-main {
     --v-layout-top: 0px !important;
+    z-index: 1;
     > div {
       background: rgb(245, 215, 197);
       background: linear-gradient(170deg, rgba(245, 215, 197, 1) 0%, rgba(245, 215, 197, 1) 11%, rgba(255, 255, 255, 1) 47%, rgba(255, 255, 255, 1) 100%);
@@ -289,8 +296,20 @@ header {
   }
 }
 .v-application__wrap {
-  background: url('@/assets/images/bg_main.jpg') top left;
-  background-size: cover;
+  // background: url('@/assets/images/bg_main.jpg') top left;
+  // background-size: cover;
+  background: #604c3f;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: rem(1180);
+    height: rem(120);
+    background: url('@/assets/images/bg_topImg.png') no-repeat;
+    background-size: contain;
+  }
 }
 .header {
   height: 80px !important;
@@ -356,7 +375,7 @@ header {
 .v-main {
   h2 {
     font-size: rem(28);
-    color: $primary;
+    color: $primaryText;
     margin-bottom: 2.5rem;
     margin-top: 0.5rem;
     position: relative;

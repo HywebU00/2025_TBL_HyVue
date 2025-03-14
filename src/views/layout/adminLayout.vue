@@ -10,12 +10,7 @@
         <!-- 平台logo start -->
         <div class="logoImg d-flex align-center">
           <v-img class="logo" src="~@/assets/images/logo.png" alt="" />
-          <v-img
-            aspect-ratio="1/1"
-            class=""
-            cover
-            src="~@/assets/images/logo_text.png"
-          ></v-img>
+          <span class="text">後台管理系統</span>
         </div>
         <!-- 平台logo end -->
       </v-app-bar>
@@ -65,8 +60,7 @@
             <v-list-item
               prepend-icon="mdi-account-cog"
               v-bind="props"
-              append-icon=""
-              title="戶政系統查詢記錄-個人查詢"
+              title="戶政系統查詢"
               @click="pushLink('/')"
             >
             </v-list-item>
