@@ -29,36 +29,36 @@ const routes = [
     path: "/mplogin",
     component: () => import("@/views/layout/mpLoginPage.vue"),
   },
-  {
-    path: "/front",
-    component: () => import("@/views/layout/frontLayout.vue"),
-    children: [
-      {
-        path: "/front",
-        component: () => import("@/views/front/cardComponent＿.vue"),
-      },
-      {
-        path: "/front/card",
-        component: () => import("@/views/front/cardComponent.vue"),
-      },
-      {
-        path: "/front/event",
-        component: () => import("@/views/front/eventComponent.vue"),
-      },
-      {
-        path: "/front/auth",
-        component: () => import("@/views/front/authComponent.vue"),
-      },
-      {
-        path: "/front/method",
-        component: () => import("@/views/front/methodComponent.vue"),
-      },
-      {
-        path: "/front/form",
-        component: () => import("@/views/front/formComponent.vue"),
-      },
-    ],
-  },
+  // {
+  //   path: "/front",
+  //   component: () => import("@/views/layout/frontLayout.vue"),
+  //   children: [
+  //     {
+  //       path: "/front",
+  //       component: () => import("@/views/front/cardComponent＿.vue"),
+  //     },
+  //     {
+  //       path: "/front/card",
+  //       component: () => import("@/views/front/cardComponent.vue"),
+  //     },
+  //     {
+  //       path: "/front/event",
+  //       component: () => import("@/views/front/eventComponent.vue"),
+  //     },
+  //     {
+  //       path: "/front/auth",
+  //       component: () => import("@/views/front/authComponent.vue"),
+  //     },
+  //     {
+  //       path: "/front/method",
+  //       component: () => import("@/views/front/methodComponent.vue"),
+  //     },
+  //     {
+  //       path: "/front/form",
+  //       component: () => import("@/views/front/formComponent.vue"),
+  //     },
+  //   ],
+  // },
 ];
 
 const router = createRouter({
