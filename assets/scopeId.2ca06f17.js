@@ -1,0 +1,1 @@
+import{s,o as n,c as t,S as a,g as r}from"./index.65ae880f.js";function d(){const o=s(!1);return n(()=>{window.requestAnimationFrame(()=>{o.value=!0})}),{ssrBootStyles:t(()=>o.value?void 0:{transition:"none !important"}),isBooted:a(o)}}function c(){const e=r("useScopeId").vnode.scopeId;return{scopeId:e?{[e]:""}:void 0}}export{c as a,d as u};
