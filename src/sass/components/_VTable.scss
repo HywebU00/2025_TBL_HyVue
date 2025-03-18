@@ -3,9 +3,17 @@
 .v-table--density-default > .v-table__wrapper > table > tfoot > tr > th {
   height: 2.5rem; //calc(var(--v-table-header-height) + 0px);
 }
-table.v-table {
+.v-table {
   .v-table__wrapper {
     border-radius: 0 !important;
+  }
+  tbody {
+    // .mdi-checkbox-blank-outline {
+    //   color: blue;
+    // }
+    .mdi-checkbox-marked {
+      color: $sliderText;
+    }
   }
 }
 

@@ -477,4 +477,149 @@ header {
   .stickyBlock {
     top: 32px;
   }
+  .pageLinkBtn {
+    margin-bottom: 0.5rem;
+    > .v-card {
+      border-radius: 58px !important;
+    }
+    button {
+      &:after {
+        border: none;
+      }
+    }
+    .v-slide-group {
+      height: rem(58);
+      button {
+        height: rem(58);
+        .v-btn__content {
+          color: $primary;
+        }
+      }
+      .v-tab__slider {
+        background: $sliderText;
+        height: 3px;
+        color: $sliderText;
+      }
+    }
+    .v-icon {
+      font-size: 2.3rem !important;
+    }
+    .v-slide-group__prev,
+    .v-slide-group__next {
+      color: #d2c9b8;
+    }
+    .v-slide-group__prev--disabled,
+    .v-slide-group__next--disabled {
+      color: #fff;
+    }
+  }
+  .bookshelfStatus {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 1rem;
+    width: 100%;
+    > ul {
+      display: flex;
+      margin-right: 1rem;
+      li {
+        margin-left: 1rem;
+      }
+    }
+    .available,
+    .use,
+    .useless,
+    .stop {
+      position: relative;
+      color: $primary;
+      font-weight: 500;
+      padding-left: 3rem;
+      &::after {
+        content: '';
+        position: absolute;
+
+        width: 2rem;
+        height: 1rem;
+        border-radius: 0.2rem;
+        left: 0.75rem;
+        top: 0.25rem;
+      }
+    }
+    .available {
+      &::after {
+        background-color: #f3bf86;
+      }
+    }
+    .use {
+      &::after {
+        background-color: #f09f8a;
+      }
+    }
+    .useless {
+      &::after {
+        background-color: #99beb6;
+      }
+    }
+    .stop {
+      &::after {
+        background-color: #98a2ac;
+      }
+    }
+  }
+  .bookshelfCard {
+    &.v-card {
+      max-width: 1460px;
+      margin: 0 auto;
+      box-shadow: unset !important;
+      border-radius: 0 !important;
+      overflow-x: scroll;
+      .item {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        button {
+          margin: 0.12rem;
+          color: #000 !important;
+          border-radius: 0.75rem !important;
+          height: rem(54);
+          box-shadow: none;
+        }
+      }
+      > div {
+        @media screen and (max-width: 1200px) {
+          transform: scale(0.95);
+        }
+        @media screen and (max-width: 1024px) {
+          transform: scale(0.9);
+        }
+        @media screen and (max-width: 992px) {
+          transform: scale(0.8);
+        }
+      }
+    }
+
+    .bg-available {
+      background: #f3bf86 !important;
+    }
+    .bg-use {
+      background: #f09f8a !important;
+    }
+    .bg-useless {
+      background: #99beb6 !important;
+    }
+    .bg-stop {
+      background: #98a2ac !important;
+    }
+  }
+  .btnGrp {
+    padding-bottom: 2rem;
+    button {
+      margin: 0 0.25rem;
+    }
+    .btnWidth {
+      min-width: rem(130);
+      @include screen('tablet') {
+        min-width: rem(80);
+      }
+    }
+  }
 }

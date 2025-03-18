@@ -68,6 +68,11 @@ export default {
           link: "https://hywebu00.github.io/2025_TBL_HyVue/#/card",
           note: "",
         },
+        {
+          name: "後台活動內容(預約取書)",
+          link: "https://hywebu00.github.io/2025_TBL_HyVue/#/reserve",
+          note: "",
+        },
       ],
     };
   },
