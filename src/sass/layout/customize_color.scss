@@ -21,7 +21,7 @@ body {
       &.v-main {
         > div {
           &::-webkit-scrollbar-thumb {
-            background-color: scale-color($frontPrimary, $lightness: 50%); //lighten($frontPrimary, 50);
+            background-color: scale-color($frontPrimary, $lightness: 50%);
           }
         }
       }

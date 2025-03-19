@@ -546,9 +546,7 @@
     <!-- 按鈕列 end -->
     <v-row>
       <v-col cols="12">
-        <v-card class="pa-3 pa-md-6 card">
-          <dataTableServer class="dataTable" />
-        </v-card>
+        <dataTableServer class="dataTable py-3" />
       </v-col>
     </v-row>
   </v-container>

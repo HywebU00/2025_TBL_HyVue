@@ -10,7 +10,6 @@ const routes = [
         path: "/",
         component: () => import("@/views/admin/defaultComponent.vue"),
       },
-
       {
         path: "reserve",
         component: () => import("@/views/admin/reserveComponent.vue"),
@@ -28,10 +27,6 @@ const routes = [
   {
     path: "/login",
     component: () => import("@/views/layout/loginPage.vue"),
-  },
-  {
-    path: "/mplogin",
-    component: () => import("@/views/layout/mpLoginPage.vue"),
   },
 ];
 
