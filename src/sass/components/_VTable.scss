@@ -4,7 +4,7 @@
   height: 2.5rem; //calc(var(--v-table-header-height) + 0px);
 }
 .v-table {
-  background: unset;
+  background: unset !important;
   .v-table__wrapper {
     border-radius: 0 !important;
     > table {
