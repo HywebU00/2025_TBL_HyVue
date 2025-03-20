@@ -1,9 +1,6 @@
-// .formGrp {
-//   label {
-//     font-weight: 500;
-//     margin: 0 0.5rem;
-//   }
-// }
+@use '@/sass/variables.scss' as *;
+@use '@/sass/common/mixins/mediaquery.scss' as *;
+@use '@/sass/common/mixins/text.scss' as *;
 input:-internal-autofill-selected {
   background: #fff !important;
 }

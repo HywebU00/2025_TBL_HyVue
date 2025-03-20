@@ -1,4 +1,5 @@
 //body 預設字級
+@use '@/sass/variables.scss' as *;
 body {
   .v-theme--front {
     h2 {

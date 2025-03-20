@@ -1,3 +1,4 @@
+@use '@/sass/variables.scss' as *;
 //http://w3bits.com/sass-mixins/
 @mixin screen($size) {
   $xxl_desktop: '(min-width: #{$screen-xxl})'; // max-width >= 2560px

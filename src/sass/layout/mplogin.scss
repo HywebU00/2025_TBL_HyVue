@@ -1,3 +1,6 @@
+@use '@/sass/variables.scss' as *;
+@use '@/sass/common/mixins/mediaquery.scss' as *;
+@use '@/sass/common/mixins/text.scss' as *;
 .mpLoginPage {
   background: url('@/assets/images/mp_bg_main.png') center center;
   background-size: cover;

@@ -1,3 +1,4 @@
+@use '@/sass/variables.scss' as *;
 .v-dialog--fullscreen {
   &.fullscreenDialog {
     height: calc(100vh - 2rem) !important;
