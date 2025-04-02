@@ -100,7 +100,7 @@ export default {
         key: "name",
         align: "start",
         sortable: false,
-        width: "20%",
+        minWidth: "200px",
       },
       { title: "作者/譯者", key: "author", align: "start", sortable: false },
       {

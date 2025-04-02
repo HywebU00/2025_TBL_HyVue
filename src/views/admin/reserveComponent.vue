@@ -36,6 +36,7 @@
       </v-col>
     </v-row>
     <!-- 待取書架列表 end -->
+    <!-- 書架按鈕列 start -->
     <v-row>
       <v-col>
         <v-card class="bookshelfCard" variant="text">
@@ -84,15 +85,26 @@
         <v-btn color="primary" variant="flat"> 變更書格狀態 </v-btn>
       </v-col>
     </v-row>
+    <!-- 書架按鈕列 end -->
+    <!-- 書架table start -->
+    <v-row>
+      <v-col class="bookshelfTable">
+        <dataTableServer />
+      </v-col>
+    </v-row>
+    <!-- 書架table end -->
   </v-container>
 </template>
 
 <script>
+import dataTableServer from "@/components/dataTableServer.vue";
 export default {
   data: () => ({}),
   methods: {},
   mounted() {},
-  components: {},
+  components: {
+    dataTableServer,
+  },
 };
 </script>
 <style scoped></style>

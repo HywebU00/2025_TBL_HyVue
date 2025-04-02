@@ -632,10 +632,6 @@
       }
     }
     @container (max-width: 760px) {
-      // > div {
-      //   flex: 0 0 100%;
-      //   max-width: 100%;
-      // }
       .methodCard {
         .info {
           > div {
@@ -656,11 +652,5 @@
         max-width: 100%;
       }
     }
-    // @include screen('tablet') {
-    //   > div {
-    //     flex: 0 0 100%;
-    //     max-width: 100%;
-    //   }
-    // }
   }
 }

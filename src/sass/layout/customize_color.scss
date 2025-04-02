@@ -1,5 +1,6 @@
 //body 預設字級
 @use '@/sass/variables.scss' as *;
+@use 'sass:color';
 body {
   .v-theme--front {
     h2 {
@@ -22,7 +23,7 @@ body {
       &.v-main {
         > div {
           &::-webkit-scrollbar-thumb {
-            background-color: scale-color($frontPrimary, $lightness: 50%);
+            background-color: color.scale($frontPrimary, $lightness: 50%);
           }
         }
       }

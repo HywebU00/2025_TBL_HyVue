@@ -1,6 +1,8 @@
 @use '@/sass/variables.scss' as *;
 @use '@/sass/common/mixins/mediaquery.scss' as *;
 @use '@/sass/common/mixins/text.scss' as *;
+@use 'sass:color';
+
 * {
   ul {
     list-style: none;
@@ -399,7 +401,7 @@ header {
     margin-left: 0.25rem;
     .v-select {
       .v-field {
-        background-color: scale-color(#f4f4f3, $lightness: -3%) !important;
+        background-color: color.scale(#f4f4f3, $lightness: -3%) !important;
       }
 
       min-width: 150px;
@@ -619,6 +621,13 @@ header {
     }
     .bg-stop {
       background: #98a2ac !important;
+    }
+  }
+  .bookshelfTable {
+    margin-top: 0.5rem;
+    .v-table {
+      max-width: 1460px;
+      margin: 0 auto;
     }
   }
   .btnGrp {
