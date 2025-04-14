@@ -434,8 +434,8 @@ header {
       &:last-child {
         padding-right: 0.75rem;
       }
-
       padding: 0 0.25rem 0.75rem 0.25rem;
+
       @include screen('desktop') {
         &:nth-child(3n) {
           padding-right: 0.75rem;
@@ -444,6 +444,7 @@ header {
           padding-left: 0.75rem;
         }
       }
+
       @include screen('tablet') {
         &:nth-child(3n),
         &:nth-child(3n + 1) {
@@ -454,6 +455,31 @@ header {
         }
         &:nth-child(2n + 1) {
           padding-left: 0.75rem;
+        }
+      }
+    }
+    &.col_2 {
+      .v-col-md-6.v-col-12 {
+        padding-left: 0.5rem;
+        &:first-child {
+          padding-left: 0.75rem;
+          padding-right: 0rem;
+        }
+      }
+      @media screen and (max-width: 960px) {
+        .v-col-md-6.v-col-12 {
+          padding: 0.75rem;
+          &:first-child {
+            padding-right: 0.75rem;
+          }
+        }
+      }
+      @include screen('tablet') {
+        .v-col-md-6.v-col-12 {
+          padding: 0.75rem;
+          &:first-child {
+            padding-right: 0.75rem;
+          }
         }
       }
     }

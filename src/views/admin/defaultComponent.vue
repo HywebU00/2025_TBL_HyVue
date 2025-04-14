@@ -26,7 +26,25 @@
         </v-col>
       </v-row>
       <v-row class="formGrp filterList">
-        <v-col cols="6" lg="6" class="pt-0">
+        <v-col cols="12" sm="12" md="12" lg="12" class="pt-0">
+          <div class="d-flex align-center mr-2 mr-sm-0">
+            <label class="px-2 mb-0" for="">From</label>
+            <datepickerModalVue> </datepickerModalVue>
+            <label class="px-2 mb-0" for="">To</label>
+            <datepickerModalVue> </datepickerModalVue>
+          </div>
+        </v-col>
+      </v-row>
+      <v-row class="formGrp filterList col_2">
+        <v-col cols="12" md="6" class="pt-0">
+          <datepickerModalVue> </datepickerModalVue>
+        </v-col>
+        <v-col cols="12" md="6" class="pt-0">
+          <datepickerModalVue> </datepickerModalVue>
+        </v-col>
+      </v-row>
+      <v-row class="formGrp filterList">
+        <v-col cols="6" lg="6" class="pt-0 pr-0">
           <v-select
             label="全部行政區"
             single-line
@@ -254,10 +272,10 @@
                 >
               </template>
               <template v-slot:default="{ isActive }">
-                <v-card title="新增帳號">
-                  <v-card-text class="px-4">
-                    <div>
-                      <v-form>
+                <v-form>
+                  <v-card title="新增帳號">
+                    <v-card-text class="px-4">
+                      <div>
                         <v-container>
                           <v-row class="formGrp">
                             <v-col class="pb-2" cols="12" lg="">
@@ -385,11 +403,9 @@
                             </v-col>
                           </v-row>
                         </v-container>
-                      </v-form>
-                      <h4 class="text-primary subtitle my-3 ml-3">
-                        -新增發放-
-                      </h4>
-                      <v-form>
+                        <h4 class="text-primary subtitle my-3 ml-3">
+                          -新增發放-
+                        </h4>
                         <v-container>
                           <v-row class="formGrp">
                             <v-col class="pb-2" cols="12" lg="">
@@ -517,26 +533,26 @@
                             </v-col>
                           </v-row>
                         </v-container>
-                      </v-form>
-                    </div>
-                  </v-card-text>
-                  <v-card-actions class="d-block">
-                    <div class="d-flex justify-center pa-4 pt-2">
-                      <v-btn
-                        class="bg-secondary btn mx-2"
-                        text="取消"
-                        variant="flat"
-                        @click="isActive.value = false"
-                      ></v-btn>
-                      <v-btn
-                        text="確認新增"
-                        class="btn mx-2"
-                        variant="flat"
-                        @click="isActive.value = false"
-                      ></v-btn>
-                    </div>
-                  </v-card-actions>
-                </v-card>
+                      </div>
+                    </v-card-text>
+                    <v-card-actions class="d-block">
+                      <div class="d-flex justify-center pa-4 pt-2">
+                        <v-btn
+                          class="bg-secondary btn mx-2"
+                          text="取消"
+                          variant="flat"
+                          @click="isActive.value = false"
+                        ></v-btn>
+                        <v-btn
+                          text="確認新增"
+                          class="btn mx-2"
+                          variant="flat"
+                          @click="isActive.value = false"
+                        ></v-btn>
+                      </div>
+                    </v-card-actions>
+                  </v-card>
+                </v-form>
               </template>
             </v-dialog>
           </div>

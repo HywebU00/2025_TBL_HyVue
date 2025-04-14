@@ -87,10 +87,10 @@
               >
             </template>
             <template v-slot:default="{ isActive }">
-              <v-card title="新增發放">
-                <v-card-text class="px-4">
-                  <div>
-                    <v-form>
+              <v-form>
+                <v-card title="新增發放">
+                  <v-card-text class="px-4">
+                    <div>
                       <v-container>
                         <v-row class="formGrp">
                           <v-col class="pb-2" cols="12" lg="">
@@ -354,32 +354,32 @@
                           </v-col>
                         </v-row>
                       </v-container>
-                    </v-form>
-                  </div>
-                </v-card-text>
-                <v-card-actions class="d-block">
-                  <div class="d-flex justify-center pa-4 pt-2 flex-wrap">
-                    <v-btn
-                      class="bg-secondary btn mx-2 mb-2 mb-sm-0"
-                      text="取消"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                    <v-btn
-                      text="確認送審"
-                      class="btn mx-2 mb-2 mb-sm-0"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                    <v-btn
-                      text="暫存草稿"
-                      class="btn mx-2 mb-2 mb-sm-0"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                  </div>
-                </v-card-actions>
-              </v-card>
+                    </div>
+                  </v-card-text>
+                  <v-card-actions class="d-block">
+                    <div class="d-flex justify-center pa-4 pt-2 flex-wrap">
+                      <v-btn
+                        class="bg-secondary btn mx-2 mb-2 mb-sm-0"
+                        text="取消"
+                        variant="flat"
+                        @click="isActive.value = false"
+                      ></v-btn>
+                      <v-btn
+                        text="確認送審"
+                        class="btn mx-2 mb-2 mb-sm-0"
+                        variant="flat"
+                        @click="isActive.value = false"
+                      ></v-btn>
+                      <v-btn
+                        text="暫存草稿"
+                        class="btn mx-2 mb-2 mb-sm-0"
+                        variant="flat"
+                        @click="isActive.value = false"
+                      ></v-btn>
+                    </div>
+                  </v-card-actions>
+                </v-card>
+              </v-form>
             </template>
           </v-dialog>
           <v-dialog class="dialogCard" max-width="500" scrollable>
@@ -389,10 +389,10 @@
               >
             </template>
             <template v-slot:default="{ isActive }">
-              <v-card title="新增報名">
-                <v-card-text class="px-4">
-                  <div>
-                    <v-form>
+              <v-form>
+                <v-card title="新增報名">
+                  <v-card-text class="px-4">
+                    <div>
                       <v-container>
                         <v-row class="formGrp">
                           <v-col class="pb-2" cols="12" lg="">
@@ -673,32 +673,32 @@
                           </v-expansion-panel>
                         </v-expansion-panels>
                       </v-container>
-                    </v-form>
-                  </div>
-                </v-card-text>
-                <v-card-actions class="d-block">
-                  <div class="d-flex justify-center pa-4 pt-2">
-                    <v-btn
-                      class="bg-secondary btn mx-2"
-                      text="取消"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                    <v-btn
-                      text="確認送審"
-                      class="btn mx-2"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                    <v-btn
-                      text="暫存草稿"
-                      class="btn mx-2"
-                      variant="flat"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                  </div>
-                </v-card-actions>
-              </v-card>
+                    </div>
+                  </v-card-text>
+                  <v-card-actions class="d-block">
+                    <div class="d-flex justify-center pa-4 pt-2">
+                      <v-btn
+                        class="bg-secondary btn mx-2"
+                        text="取消"
+                        variant="flat"
+                        @click="isActive.value = false"
+                      ></v-btn>
+                      <v-btn
+                        text="確認送審"
+                        class="btn mx-2"
+                        variant="flat"
+                        @click="isActive.value = false"
+                      ></v-btn>
+                      <v-btn
+                        text="暫存草稿"
+                        class="btn mx-2"
+                        variant="flat"
+                        @click="isActive.value = false"
+                      ></v-btn>
+                    </div>
+                  </v-card-actions>
+                </v-card>
+              </v-form>
             </template>
           </v-dialog>
         </div>
@@ -743,13 +743,13 @@
                       </v-btn>
                     </template>
                     <template v-slot:default="{ isActive }">
-                      <v-card title="匯出名單">
-                        <v-card-text class="px-4">
-                          <div>
-                            <h4 class="text-gray subtitle ml-3">
-                              名單將以加密壓縮檔案下載，請設定您的密碼！
-                            </h4>
-                            <v-form>
+                      <v-form>
+                        <v-card title="匯出名單">
+                          <v-card-text class="px-4">
+                            <div>
+                              <h4 class="text-gray subtitle ml-3">
+                                名單將以加密壓縮檔案下載，請設定您的密碼！
+                              </h4>
                               <v-container>
                                 <v-row class="formGrp">
                                   <v-col class="pb-2" cols="12" lg="">
@@ -822,26 +822,26 @@
                                   </v-col>
                                 </v-row>
                               </v-container>
-                            </v-form>
-                          </div>
-                        </v-card-text>
-                        <v-card-actions class="d-block">
-                          <div class="d-flex justify-center pa-4 pt-2">
-                            <v-btn
-                              class="bg-secondary btn mx-2"
-                              text="取消"
-                              variant="flat"
-                              @click="isActive.value = false"
-                            ></v-btn>
-                            <v-btn
-                              text="確認匯出"
-                              class="btn mx-2"
-                              variant="flat"
-                              @click="isActive.value = false"
-                            ></v-btn>
-                          </div>
-                        </v-card-actions>
-                      </v-card>
+                            </div>
+                          </v-card-text>
+                          <v-card-actions class="d-block">
+                            <div class="d-flex justify-center pa-4 pt-2">
+                              <v-btn
+                                class="bg-secondary btn mx-2"
+                                text="取消"
+                                variant="flat"
+                                @click="isActive.value = false"
+                              ></v-btn>
+                              <v-btn
+                                text="確認匯出"
+                                class="btn mx-2"
+                                variant="flat"
+                                @click="isActive.value = false"
+                              ></v-btn>
+                            </div>
+                          </v-card-actions>
+                        </v-card>
+                      </v-form>
                     </template>
                   </v-dialog>
                 </v-card-actions>

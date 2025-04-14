@@ -654,3 +654,8 @@
     }
   }
 }
+.v-sheet {
+  &.v-picker {
+    box-shadow: none !important;
+  }
+}
