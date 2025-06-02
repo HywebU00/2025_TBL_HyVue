@@ -659,3 +659,40 @@
     box-shadow: none !important;
   }
 }
+.helpCard {
+  max-width: 350px;
+  .title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  ul {
+    padding: 0 1.25rem;
+    list-style: disc;
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+.alertCard {
+  display: flex;
+  background: #f268592e;
+  padding: 0.25rem 1rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  .v-icon {
+    color: #c16149;
+  }
+  .v-btn {
+    width: 24px;
+    height: 24px;
+
+    font-weight: bolder;
+    font-size: 1rem;
+  }
+  .text {
+    color: $primaryText;
+    font-weight: 700;
+    margin: 0 0.75rem;
+  }
+}
