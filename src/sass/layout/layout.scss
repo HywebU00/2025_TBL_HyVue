@@ -666,6 +666,9 @@ header {
       &.v-btn--disabled {
         opacity: 0.6;
       }
+      .v-ripple__container {
+        display: none !important;
+      }
       .v-btn__overlay {
         background: unset;
       }
