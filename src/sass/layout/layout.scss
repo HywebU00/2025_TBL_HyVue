@@ -625,6 +625,7 @@ header {
         display: flex;
         justify-content: center;
         flex-wrap: nowrap;
+        width: 100%;
         button {
           margin: 0.12rem;
           color: #000 !important;
@@ -657,9 +658,29 @@ header {
     }
     .bg-use {
       background: #f09f8a !important;
+      cursor: not-allowed;
+      &.v-btn--disabled {
+        opacity: 0.6;
+      }
+      .v-ripple__container {
+        display: none !important;
+      }
+      .v-btn__overlay {
+        background: unset;
+      }
     }
     .bg-useless {
       background: #99beb6 !important;
+      cursor: not-allowed;
+      &.v-btn--disabled {
+        opacity: 0.6;
+      }
+      .v-ripple__container {
+        display: none !important;
+      }
+      .v-btn__overlay {
+        background: unset;
+      }
     }
     .bg-stop {
       background: #98a2ac !important;

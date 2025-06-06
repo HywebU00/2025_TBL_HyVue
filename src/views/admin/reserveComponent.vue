@@ -102,7 +102,7 @@
               </template>
             </div>
             <div v-for="j in 1" :key="j" class="item">
-              <template v-for="i in 14" :key="i">
+              <template v-for="i in 8" :key="i">
                 <v-btn class="bg-useless">
                   {{ 100 + j * 10 + i }}
                 </v-btn>
@@ -119,7 +119,7 @@
               </template>
             </div>
             <div v-for="j in 1" :key="j" class="item">
-              <template v-for="i in 14" :key="i">
+              <template v-for="i in 4" :key="i">
                 <v-btn class="bg-available">
                   {{ 100 + j * 10 + i }}
                 </v-btn>
