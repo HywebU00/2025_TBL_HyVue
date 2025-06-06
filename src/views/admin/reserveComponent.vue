@@ -109,10 +109,11 @@
               </template>
             </div>
             <div v-for="j in 1" :key="j" class="item">
-              <template v-for="i in 14" :key="i">
+              <template v-for="i in 6" :key="i">
                 <!-- 增加 disabled 標籤 start-->
                 <v-btn class="bg-stop">
-                  {{ 100 + j * 10 + i }}
+                  {{ 10 + i }}
+                  <!-- {{ 100 + j * 10 + i }} -->
                 </v-btn>
                 <!-- 增加 disabled 標籤 end-->
               </template>
