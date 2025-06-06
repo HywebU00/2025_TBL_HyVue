@@ -684,16 +684,7 @@ header {
     }
     .bg-stop {
       background: #98a2ac !important;
-      cursor: not-allowed;
-      &.v-btn--disabled {
-        opacity: 0.6;
-      }
-      .v-ripple__container {
-        display: none !important;
-      }
-      .v-btn__overlay {
-        background: unset;
-      }
+      
     }
   }
   .bookshelfTable {
