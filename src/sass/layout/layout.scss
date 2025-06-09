@@ -684,7 +684,6 @@ header {
     }
     .bg-stop {
       background: #98a2ac !important;
-      
     }
   }
   .bookshelfTable {
@@ -722,6 +721,7 @@ header {
   flex-direction: column;
   .scrollContent {
     flex-grow: 1;
+    height: 100%;
     overflow: scroll;
     &::-webkit-scrollbar-track {
       background-color: #f5f5f500;
