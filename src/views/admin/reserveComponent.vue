@@ -84,7 +84,8 @@
     <!-- 書架按鈕列 start -->
     <v-row class="scrollContent">
       <v-col>
-        <v-card class="bookshelfCard" variant="text">
+        <!-- 增加 has-no-allowed class切換 cursor樣式 -->
+        <v-card class="bookshelfCard has-no-allowed" variant="text">
           <!-- 切換按鈕class .bg-available /.bg-use /.bg-useless/.bg-stop -->
           <div class="grp">
             <div v-for="j in 1" :key="j" class="item">
